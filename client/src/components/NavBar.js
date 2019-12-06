@@ -10,7 +10,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className='navBar'>
+        <div data-testid='navBar' className='navBar'>
             <h1>Women's World Cup Players Ranked By Search Interest</h1>
             <button onClick={toggleMode}>DarkMode</button>
         </div>
