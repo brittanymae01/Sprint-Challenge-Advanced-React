@@ -19,13 +19,16 @@ class App extends React.Component {
         data: response.data
       })
     })
+      .catch(error => {
+        console.log('data not received', error)
+      })
   }
 
   render() {
     return (
       <div className="App">
         <NavBar />
-        <div className='cards'>
+        <div data-testid='card' className='cards'>
           {this.state.data.map(person => (
             <Card
               key={person.id}

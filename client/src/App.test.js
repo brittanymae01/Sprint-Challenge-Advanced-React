@@ -12,7 +12,7 @@ test('renders without crashing', () => {
   render(<App />)
 })
 
-test('darkMode renders to the UI', () => {
+test('darkMode text renders to the UI', () => {
   const { getByText } = render(<App />)
 
   getByText(/darkmode/i)
@@ -23,5 +23,14 @@ test('navBar is rendered', () => {
 
   getByTestId(/navbar/i)
 })
+
+
+test('Card div is rendered', () => {
+  const { getByTestId } = render(<App />);
+
+  getByTestId(/card/i)
+})
+
+
 
 
