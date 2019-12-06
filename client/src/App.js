@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
-import Card from './components/Card'
+import Card from './components/Card';
+import NavBar from './components/NavBar';
+
 import axios from 'axios'
 
 class App extends React.Component {
@@ -13,7 +15,6 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('http://localhost:5000/api/players').then(response => {
-      console.log(response)
       this.setState({
         data: response.data
       })
@@ -21,9 +22,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
+        <NavBar />
         <div className='cards'>
           {this.state.data.map(person => (
             <Card
